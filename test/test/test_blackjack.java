@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;
 import blackjack.cartas.*;
+import blackjack.jugadores.*;
 
 
 
@@ -19,27 +20,27 @@ public class test_blackjack {
     @Test
     public void prueba_caso_1(){
     
-        player1.addCard(new Jack());
-        player1.addCard(new Ace());
+        player1.addCard(new Jack().getValor());
+        player1.addCard(new Ace().getValor());
         
-        player2.addCard(new PipCard(10));
-        player2.addCard(new PipCard(5));
-        player2.addCard(new PipCard(6));
+        player2.addCard(new PipCard(10).getValor());
+        player2.addCard(new PipCard(5).getValor());
+        player2.addCard(new PipCard(6).getValor());
         
-        player3.addCard(new PipCard(3));
-        player3.addCard(new PipCard(6));
-        player3.addCard(new Ace());
-        player3.addCard(new PipCard(3));
-        player3.addCard(new Ace());
-        player3.addCard(new King());
+        player3.addCard(new PipCard(3).getValor());
+        player3.addCard(new PipCard(6).getValor());
+        player3.addCard(new Ace().getValor());
+        player3.addCard(new PipCard(3).getValor());
+        player3.addCard(new Ace().getValor());
+        player3.addCard(new King().getValor());
         
-        croupier.addCard(new PipCard(5));
-        croupier.addCard(new PipCard(10));
+        croupier.addCard(new PipCard(5).getValor());
+        croupier.addCard(new PipCard(10).getValor());
         
-        deck.addCard(new Ace());
-        deck.addCard(new PipCard(3));
-        deck.addCard(new King());
-        deck.addCard(new PipCard(2));
+        deck.addCard(new Ace().getValor());
+        deck.addCard(new PipCard(3).getValor());
+        deck.addCard(new King().getValor());
+        deck.addCard(new PipCard(2).getValor());
         
         BlackJack blackjack = new BlackJack(player1,player2,player3,croupier);
         List<Players> winners = blackjack.getWinners();
