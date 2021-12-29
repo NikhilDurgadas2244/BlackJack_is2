@@ -5,6 +5,7 @@ import java.util.List;
 import org.junit.Test;
 import blackjack.cartas.*;
 import blackjack.jugadores.*;
+import blackjack.blackjack.*;
 
 
 
@@ -43,8 +44,8 @@ public class test_blackjack {
         deck.addCard(new PipCard(2).getValor());
         
         BlackJack blackjack = new BlackJack(player1,player2,player3,croupier);
-        List<Players> winners = blackjack.getWinners();
-        List<Players> test = new ArrayList<>();
+        List<Player> winners = blackjack.getWinners();
+        List<Player> test = new ArrayList<>();
         test.add(player1);
         assert(winners.equals(test));
     }
