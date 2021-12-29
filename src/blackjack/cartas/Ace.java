@@ -1,12 +1,10 @@
 package blackjack.cartas;
 
-/**
- *
- * @author Usuario
- */
-public class Ace {
+
+public class Ace extends Card {
     private final int valor = 11;
 
+    @Override
     public int getValor() {
         return valor;
     }

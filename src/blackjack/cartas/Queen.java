@@ -1,10 +1,11 @@
 package blackjack.cartas;
 
-public class Queen {
+public class Queen extends Card{
 
     private final int valor = 10;
 
-    public int getValor() {
+    @Override
+    public int getValor() { 
         return valor;
     }
     

@@ -1,15 +1,21 @@
 package blackjack.jugadores;
 
-public class Player {
-    
-private int valor = 0;
+import blackjack.cartas.Card;
+import java.util.ArrayList;
+import java.util.List;
 
-    public void addCard(int value){
-        valor += value;
+public class Player {
+
+    private final List<Card> bet = new ArrayList<Card>();
+
+    
+    public void addCard(Card card){
+        bet.add(card);
+        
     }
 
-    public int getValorFinal() {
-        return valor;
+    public List<Card> getCards() {
+        return bet;
     }
     
 }

@@ -1,6 +1,6 @@
 package blackjack.cartas;
 
-public class PipCard {
+public class PipCard extends Card{
     
     private int valor = 0;
 
@@ -8,6 +8,7 @@ public class PipCard {
         this.valor = value;
     }
 
+    @Override
     public int getValor() {
         return valor;
     }
