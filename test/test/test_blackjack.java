@@ -17,7 +17,7 @@ public class test_blackjack {
     Player player3 = new Player();
     Player croupier = new Player();
     Player deck = new Player();
-    
+
     @Test
     public void prueba_caso_1(){
     
@@ -42,11 +42,11 @@ public class test_blackjack {
         System.out.println(BlackJack.calculatePoints(player3.getCards()));
         
         
-        croupier.addCard(new PipCard(5));
-        croupier.addCard(new PipCard(10));
+        croupier.addCard(new PipCard(9));
+        croupier.addCard(new PipCard(7));
         
-        deck.addCard(new Ace());
-        deck.addCard(new PipCard(3));
+        deck.addCard(new PipCard(5));
+        deck.addCard(new PipCard(4));
         deck.addCard(new King());
         deck.addCard(new PipCard(2));
         
@@ -60,22 +60,25 @@ public class test_blackjack {
         assert(winners.equals(test));
     }
     
-    
     @Test
     public void prueba_caso_2(){
         player1.addCard(new PipCard(10));
         player1.addCard(new King());
+        //System.out.println(BlackJack.calculatePoints(player1.getCards()));
         
         player2.addCard(new PipCard(10));
         player2.addCard(new PipCard(2));
         player2.addCard(new PipCard(6));
+        //System.out.println(BlackJack.calculatePoints(player2.getCards()));
         
         player3.addCard(new PipCard(8));
         player3.addCard(new PipCard(8));
         player3.addCard(new PipCard(5));
+        //System.out.println(BlackJack.calculatePoints(player3.getCards()));
         
         croupier.addCard(new PipCard(5));
         croupier.addCard(new PipCard(10));
+        
         
         deck.addCard(new Ace());
         deck.addCard(new PipCard(3));
@@ -84,18 +87,14 @@ public class test_blackjack {
         
          BlackJack blackjack = new BlackJack(player1,player2,player3,croupier, deck);
         List<Player> winners = blackjack.getWinners(player1,player2,player3,croupier,deck);
+        //for(Player p : winners){
+        //    System.out.println(p.getCards());
+        //}
         List<Player> test = new ArrayList<>();
         test.add(player1);
         test.add(player3);
         assert(winners.equals(test));
-        
-        
-        
     
     }
-    
-    
-    
-    
     
 }

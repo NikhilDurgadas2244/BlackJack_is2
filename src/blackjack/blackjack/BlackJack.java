@@ -44,10 +44,10 @@ public class BlackJack {
     
     public static void croupierTakeCards(Player croupier){
         List<Card> deckCards = new ArrayList<>(deck.getCards());
+        int i = 0;
          while (calculatePoints(croupier.getCards()) <= 17){
-             for (Card card : deckCards){
-                 croupier.addCard(card);
-            }
+            croupier.addCard(deckCards.get(i));
+            i++;
          }
     }
     
