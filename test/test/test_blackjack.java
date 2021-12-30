@@ -16,8 +16,15 @@ public class test_blackjack {
     Player player2 = new Player();
     Player player3 = new Player();
     Player croupier = new Player();
-    Player deck = new Player();
-
+    List<Card> deck = new ArrayList<>();
+    
+    @Test
+    public void prueba_caso_blackjack(){
+        player1.addCard(new Jack());
+        player1.addCard(new Ace());
+        
+        assert(BlackJack.isBlackJack(player1.getCards()));
+    }
     @Test
     public void prueba_caso_1(){
     
@@ -45,10 +52,10 @@ public class test_blackjack {
         croupier.addCard(new PipCard(9));
         croupier.addCard(new PipCard(7));
         
-        deck.addCard(new PipCard(5));
-        deck.addCard(new PipCard(4));
-        deck.addCard(new King());
-        deck.addCard(new PipCard(2));
+        deck.add(new PipCard(5));
+        deck.add(new PipCard(4));
+        deck.add(new King());
+        deck.add(new PipCard(2));
         
         BlackJack blackjack = new BlackJack(player1,player2,player3,croupier,deck);
         List<Player> winners = blackjack.getWinners(player1,player2,player3,croupier,deck);
@@ -80,10 +87,10 @@ public class test_blackjack {
         croupier.addCard(new PipCard(10));
         
         
-        deck.addCard(new Ace());
-        deck.addCard(new PipCard(3));
-        deck.addCard(new King());
-        deck.addCard(new PipCard(2));
+        deck.add(new Ace());
+        deck.add(new PipCard(3));
+        deck.add(new King());
+        deck.add(new PipCard(2));
         
          BlackJack blackjack = new BlackJack(player1,player2,player3,croupier, deck);
         List<Player> winners = blackjack.getWinners(player1,player2,player3,croupier,deck);

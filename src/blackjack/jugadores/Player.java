@@ -23,7 +23,7 @@ public class Player {
         BlackJack.croupierTakeCards(croupier);
         int sumBetCroupier = BlackJack.calculatePoints(croupier.getCards());
         int sumBetPlayer = BlackJack.calculatePoints(this.bet);
-        System.out.println(sumBetPlayer + " " + sumBetCroupier);
+        //System.out.println(sumBetPlayer + " " + sumBetCroupier);
         //System.out.println(BlackJack.calculatePoints(croupier.getCards()));
         if(sumBetPlayer > 21) {return false;}
         
@@ -33,8 +33,8 @@ public class Player {
         
         if(BlackJack.isBlackJack(this.bet)){return true;}
         
-        
-        return sumBetPlayer > sumBetCroupier;
+        if(sumBetPlayer > sumBetCroupier){return true;}
+        return false; 
     }
     
 }

@@ -11,9 +11,9 @@ public class BlackJack {
     private final Player player2;
     private final Player player3;
     private final Player croupier;
-    private static Player deck;
+    private static List<Card> deck;
 
-    public BlackJack(Player p1, Player p2, Player p3, Player c, Player d) {
+    public BlackJack(Player p1, Player p2, Player p3, Player c, List<Card> d) {
         this.player1 = p1;
         this.player2 = p2;
         this.player3 = p3;
@@ -43,7 +43,7 @@ public class BlackJack {
     }
     
     public static void croupierTakeCards(Player croupier){
-        List<Card> deckCards = new ArrayList<>(deck.getCards());
+        List<Card> deckCards = new ArrayList<>(deck);
         int i = 0;
          while (calculatePoints(croupier.getCards()) <= 17){
             croupier.addCard(deckCards.get(i));
@@ -51,7 +51,7 @@ public class BlackJack {
          }
     }
     
-    public List<Player> getWinners(Player player1, Player player2, Player player3, Player croupier, Player deck){
+    public List<Player> getWinners(Player player1, Player player2, Player player3, Player croupier, List<Card> deck){
         ArrayList<Player> winners = new ArrayList<>();
         
         if(player1.isWinner(croupier)){winners.add(player1);}
