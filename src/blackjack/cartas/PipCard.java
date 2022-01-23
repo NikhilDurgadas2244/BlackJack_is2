@@ -6,6 +6,8 @@ public class PipCard extends Card{
 
     public PipCard(int value) {
         this.valor = value;
+        if (this.valor < 2){this.valor = 2;}
+        if (this.valor > 10){this.valor = 10;}
     }
 
     @Override
