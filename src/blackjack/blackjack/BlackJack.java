@@ -35,7 +35,7 @@ public class BlackJack {
             }
             totalValue += card.getValor();
         }
-        while(totalValue > 21 && aceCounter >= 0){
+        while(totalValue > 21 && aceCounter > 0){
             totalValue -= 10;
             aceCounter--;
         }
@@ -45,7 +45,7 @@ public class BlackJack {
     public static void croupierTakeCards(Player croupier){
         List<Card> deckCards = new ArrayList<>(deck);
         int i = 0;
-         while (calculatePoints(croupier.getCards()) <= 17){
+         while (calculatePoints(croupier.getCards()) < 17){
             croupier.addCard(deckCards.get(i));
             i++;
          }
